@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOS-Core Mirrors</title>
+<meta name="description" content="The DOS kernels and command shells mirrored by DOS-Core, and where each one really lives.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="menubar">
+  <span class="app">DOS-Core</span>
+  <a href="index.html">Home</a>
+  <a href="mirrors.html" aria-current="page">Mirrors</a>
+  <a href="install.html">Install</a>
+  <a href="builds.html">Builds</a>
+  <a href="https://github.com/dos-core">GitHub</a>
+</nav>
+
+<main class="desktop">
+
+  <div class="notice" role="note">
+    <span class="mark" aria-hidden="true">!</span>
+    <div>
+      <p><strong>Read-only.</strong> Report bugs and send patches to the upstream project listed below.</p>
+    </div>
+  </div>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h1>Mirror list</h1><span class="box r"></span></div>
+    <div class="body">
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>Mirror</th><th>What</th><th>Upstream</th><th>Kind</th></tr></thead>
+        <tbody>
+          <tr><td><a href="#fdkernel">fdkernel</a></td><td>FreeDOS kernel</td><td>GitHub</td><td>Kernel</td></tr>
+          <tr><td><a href="#edrdos">edrdos</a></td><td>Enhanced DR-DOS, SvarDOS</td><td>GitHub</td><td>Kernel + shell</td></tr>
+          <tr><td><a href="#ecm-edrdos">ecm-edrdos</a></td><td>Enhanced DR-DOS, ecm</td><td>Mercurial</td><td>Kernel + shell</td></tr>
+          <tr><td><a href="#msdos4">msdos4</a></td><td>MS-DOS 4.00</td><td>GitHub</td><td>Kernel + shell</td></tr>
+          <tr><td><a href="#ldos">ldos</a></td><td>lDOS</td><td>Mercurial</td><td>Kernel + shell</td></tr>
+          <tr><td><a href="#rxdos">rxdos</a></td><td>RxDOS</td><td>Mercurial</td><td>Kernel + shell</td></tr>
+          <tr><td><a href="#freecom">freecom</a></td><td>FreeCOM</td><td>GitHub</td><td>Shell</td></tr>
+          <tr><td><a href="#svarcom">svarcom</a></td><td>SvarCOM / SvarDOS core</td><td>SVN via GitHub</td><td>Shell</td></tr>
+          <tr><td><a href="#4dos">4dos</a></td><td>4DOS</td><td>Source archives</td><td>Shell</td></tr>
+          <tr><td><a href="#ecm">ecm</a></td><td>ecm's macros, boot loaders, tools</td><td>Mercurial</td><td>Build support</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>Kernels</h2><span class="box r"></span></div>
+    <div class="body">
+
+      <article class="mirror" id="fdkernel">
+        <h3>FreeDOS Kernel</h3>
+        <p>The kernel of the FreeDOS project. It grew out of Pat Villani's
+        DOS-C and has been maintained by the FreeDOS community since the
+        1990s. Ships as a single <code>KERNEL.SYS</code>. FAT12 and FAT16 are supported. FAT32 support and minimum CPU
+        requirements depend on the build.</p>
+        <dl>
+          <dt>Upstream</dt><dd><a href="https://github.com/FDOS/kernel">github.com/FDOS/kernel</a></dd>
+          <dt>Project</dt><dd><a href="https://www.freedos.org/">freedos.org</a></dd>
+          <dt>Mirror</dt><dd><a href="https://github.com/dos-core/fdkernel">github.com/dos-core/fdkernel</a></dd>
+          <dt>License</dt><dd><a href="https://github.com/FDOS/kernel">GNU GPL v2 or later</a></dd>
+        </dl>
+      </article>
+
+      <article class="mirror" id="edrdos">
+        <h3>Enhanced DR-DOS (SvarDOS)</h3>
+        <p>The DR-DOS line, descended from the Caldera OpenDOS 7.01 sources,
+        moved over to JWasm and OpenWatcom. It is the default kernel in
+        SvarDOS. Builds either the classic <code>DRBIO.SYS</code> +
+        <code>DRDOS.SYS</code> pair or a single <code>KERNEL.SYS</code> that
+        follows the FreeDOS load protocol.</p>
+        <dl>
+          <dt>Upstream</dt><dd><a href="https://github.com/SvarDOS/edrdos">github.com/SvarDOS/edrdos</a></dd>
+          <dt>Project</dt><dd><a href="http://svardos.org/">svardos.org</a></dd>
+          <dt>Mirror</dt><dd><a href="https://github.com/dos-core/edrdos">github.com/dos-core/edrdos</a></dd>
+          <dt>License</dt><dd>See <a href="https://github.com/dos-core/edrdos/blob/main/license.htm"><code>license.htm</code></a></dd>
+        </dl>
+      </article>
+
+      <article class="mirror" id="ecm-edrdos">
+        <h3>Enhanced DR-DOS (ecm)</h3>
+        <p>C. Masloch's branch of Enhanced DR-DOS, built with NASM and ecm's
+        own macro and boot loader repositories. Converted from Mercurial;
+        named branches show up as <code>hg/&lt;name&gt;</code>.</p>
+        <dl>
+          <dt>Upstream</dt><dd><a href="https://hg.pushbx.org/ecm/edrdos/">hg.pushbx.org/ecm/edrdos</a></dd>
+          <dt>Mirror</dt><dd><a href="https://github.com/dos-core/ecm-edrdos">github.com/dos-core/ecm-edrdos</a></dd>
+          <dt>License</dt><dd>See <a href="https://github.com/dos-core/ecm-edrdos/blob/main/license.htm"><code>license.htm</code></a></dd>
+          <dt>Needs</dt><dd><a href="#ecm">ecm</a> build support repositories</dd>
+        </dl>
+      </article>
+
+      <article class="mirror" id="msdos4">
+        <h3>MS-DOS 4.00</h3>
+        <p>Microsoft and IBM opened the MS-DOS 4.00 source under the MIT
+        license in April 2024. This mirror contains the 4.00 source extracted
+        from the original release, with fixes so it builds and boots. It is
+        here for reference. See <a href="#ldos">lDOS</a> for improvements and
+        further fixes.</p>
+        <dl>
+          <dt>Upstream</dt><dd><a href="https://github.com/neozeed/dos400">github.com/neozeed/dos400</a></dd>
+          <dt>Original release</dt><dd><a href="https://github.com/microsoft/MS-DOS">github.com/microsoft/MS-DOS</a></dd>
+          <dt>Mirror</dt><dd><a href="https://github.com/dos-core/msdos4">github.com/dos-core/msdos4</a></dd>
+          <dt>License</dt><dd>MIT</dd>
+        </dl>
+      </article>
+
+      <article class="mirror" id="ldos">
+        <h3>lDOS</h3>
+        <p>ecm's continuation of the MS-DOS 4 sources, reworked to build with
+        NASM and free tools.</p>
+        <dl>
+          <dt>Upstream</dt><dd><a href="https://hg.pushbx.org/ecm/msdos4">hg.pushbx.org/ecm/msdos4</a></dd>
+          <dt>Mirror</dt><dd><a href="https://github.com/dos-core/ldos">github.com/dos-core/ldos</a></dd>
+          <dt>License</dt><dd>MIT</dd>
+          <dt>Needs</dt><dd><a href="#ecm">ecm</a> build support repositories</dd>
+        </dl>
+      </article>
+
+      <article class="mirror" id="rxdos">
+        <h3>RxDOS</h3>
+        <p>RxDOS was Mike Podanoffsky's DOS clone, written in assembly and
+        later released under the GPL. The 7.2x series is ecm's work on it.
+        Version branches (<code>hg/7.21</code>, <code>hg/7.22</code> and so
+        on) come straight from Mercurial.</p>
+        <dl>
+          <dt>Upstream</dt><dd><a href="https://hg.pushbx.org/ecm/rxdos-7.2x/">hg.pushbx.org/ecm/rxdos-7.2x</a></dd>
+          <dt>Mirror</dt><dd><a href="https://github.com/dos-core/rxdos">github.com/dos-core/rxdos</a></dd>
+          <dt>License</dt><dd>GNU GPL v2</dd>
+          <dt>Needs</dt><dd><a href="#ecm">ecm</a> build support repositories</dd>
+        </dl>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>Shells</h2><span class="box r"></span></div>
+    <div class="body">
+
+      <article class="mirror" id="freecom">
+        <h3>FreeCOM</h3>
+        <p>The FreeDOS <code>COMMAND.COM</code>. A generic shell with build variations
+        supporting XMS swapping, multiple translations, and many enhancements to
+        supported commands and command history support.</p>
+        <dl>
+          <dt>Upstream</dt><dd><a href="https://github.com/FDOS/freecom">github.com/FDOS/freecom</a></dd>
+          <dt>Mirror</dt><dd><a href="https://github.com/dos-core/freecom">github.com/dos-core/freecom</a></dd>
+          <dt>License</dt><dd>GNU GPL v2</dd>
+        </dl>
+      </article>
+
+      <article class="mirror" id="svarcom">
+        <h3>SvarCOM</h3>
+        <p>Mateusz Viste's command interpreter for SvarDOS. Small, written in
+        C, and keeps only a tiny resident part in memory. The mirror carries
+        the whole SvarDOS core tree; the shell is in <code>svarcom/</code>.</p>
+        <dl>
+          <dt>Upstream</dt><dd><a href="https://github.com/SvarDOS/core">github.com/SvarDOS/core</a> (Git mirror of <code>svn://svn.svardos.org/svardos</code>)</dd>
+          <dt>Project</dt><dd><a href="http://svardos.org/">svardos.org</a></dd>
+          <dt>Mirror</dt><dd><a href="https://github.com/dos-core/svarcom">github.com/dos-core/svarcom</a></dd>
+          <dt>License</dt><dd>MIT (SvarCOM). See individual notices for other parts of the SvarDOS core tree.</dd>
+        </dl>
+      </article>
+
+      <article class="mirror" id="4dos">
+        <h3>4DOS</h3>
+        <p>Rex Conn's replacement shell from JP Software, the one with
+        aliases, command-line editing, <code>DESCRIPT.ION</code> and the
+        batch language everyone wished <code>COMMAND.COM</code> had. JP
+        Software released the 7.50 source in 2004, and Luchezar Georgiev
+        carried it forward through 8.00.</p>
+        <p>4DOS never had a public version control history, so this one is
+        rebuilt from the published source releases and patch archives. Tags
+        without a suffix match a published source release. Tags ending in
+        <code>-est</code> are estimates pieced together from changelogs and
+        later patches; treat them as a best guess at history, not a
+        released version.  This is recommended for most compatible in running
+        programs but pay attention to its license prior to use.</p>
+        <dl>
+          <dt>Sources</dt><dd><a href="https://4dos.info/sources.htm">4dos.info/sources.htm</a></dd>
+          <dt>History</dt><dd><a href="https://4dos.info/v4dos.htm">4dos.info/v4dos.htm</a></dd>
+          <dt>Archive</dt><dd><a href="https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/user/4dos/">FreeDOS archive on ibiblio</a></dd>
+          <dt>Mirror</dt><dd><a href="https://github.com/dos-core/4dos">github.com/dos-core/4dos</a></dd>
+          <dt>License</dt><dd>JP Software’s original source terms require written permission to compile 4DOS for systems other than FreeDOS or to use it in a commercial product. Later patches and bundled components have their own terms. See the notices in the <a href="https://4dos.info/sources.htm">source archives</a>.</dd>
+        </dl>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>Build support</h2><span class="box r"></span></div>
+    <div class="body">
+      <article class="mirror" id="ecm">
+        <h3>ecm companion repositories</h3>
+        <p>lDOS, ecm's EDR-DOS and RxDOS expect a handful of ecm's other
+        repositories sitting next to them: macros, boot loaders, the
+        compressor, the sector installer and so on. Each one is mirrored
+        into its own subdirectory of a single Git repository, with the converted Git history included through subtree merges.</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Directory</th><th>Upstream</th></tr></thead>
+          <tbody>
+            <tr><td><code>lmacros/</code></td><td><a href="https://hg.pushbx.org/ecm/lmacros">hg.pushbx.org/ecm/lmacros</a></td></tr>
+            <tr><td><code>ldosboot/</code></td><td><a href="https://hg.pushbx.org/ecm/ldosboot">hg.pushbx.org/ecm/ldosboot</a></td></tr>
+            <tr><td><code>scanptab/</code></td><td><a href="https://hg.pushbx.org/ecm/scanptab">hg.pushbx.org/ecm/scanptab</a></td></tr>
+            <tr><td><code>crc16-t/</code></td><td><a href="https://hg.pushbx.org/ecm/crc16-t">hg.pushbx.org/ecm/crc16-t</a></td></tr>
+            <tr><td><code>bootimg/</code></td><td><a href="https://hg.pushbx.org/ecm/bootimg">hg.pushbx.org/ecm/bootimg</a></td></tr>
+            <tr><td><code>instsect/</code></td><td><a href="https://hg.pushbx.org/ecm/instsect">hg.pushbx.org/ecm/instsect</a></td></tr>
+            <tr><td><code>inicomp/</code></td><td><a href="https://hg.pushbx.org/ecm/inicomp">hg.pushbx.org/ecm/inicomp</a></td></tr>
+            <tr><td><code>mktmpinc/</code></td><td><a href="https://hg.pushbx.org/ecm/mktmpinc">hg.pushbx.org/ecm/mktmpinc</a></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <dl>
+          <dt>Mirror</dt><dd><a href="https://github.com/dos-core/ecm">github.com/dos-core/ecm</a></dd>
+          <dt>Using it</dt><dd>Point the build at the subdirectory, for example <code>LMACROS_DIR=../ecm/lmacros/</code></dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>How the mirrors are kept</h2><span class="box r"></span></div>
+    <div class="body">
+      <ul>
+        <li>Git sources are fetched and the main branch is fast-forwarded when possible.</li>
+        <li>Mercurial sources are pulled and converted with hg-git. The
+        default branch becomes <code>main</code>; named branches become
+        <code>hg/&lt;name&gt;</code>.</li>
+        <li>The <code>ecm</code> repository adds integration commits for its
+        subtrees. The 4DOS history is reconstructed from source archives.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="statusbar">
+  <span>See each mirrored project for its license terms.</span>
+  <span><a href="https://github.com/dos-core">github.com/dos-core</a></span>
+</footer>
+
+</body>
+</html>

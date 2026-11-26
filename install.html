@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installing a DOS Kernel</title>
+<meta name="description" content="Putting a DOS kernel and shell onto a floppy, hard disk or disk image with SYS.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="menubar">
+  <span class="app">DOS-Core</span>
+  <a href="index.html">Home</a>
+  <a href="mirrors.html">Mirrors</a>
+  <a href="install.html" aria-current="page">Install</a>
+  <a href="builds.html">Builds</a>
+  <a href="https://github.com/dos-core">GitHub</a>
+</nav>
+
+<main class="desktop">
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h1>SYS A:</h1><span class="box r"></span></div>
+    <div class="body">
+      <p>Making a disk bootable takes a boot sector that can find the
+      kernel, the kernel itself, and a command shell. The <code>SYS</code>
+      command (SYStem installer) writes the boot sector and copies the
+      kernel and shell to the target disk.</p>
+      <p>Boot into FreeDOS and insert the floppy in drive A:. On a freshly
+      formatted disk, run <a href="https://help.fdos.org/en/hhstndrd/base/sys.htm"><code>SYS A:</code></a>. If the disk is unformatted,
+      run <a href="https://help.fdos.org/en/hhstndrd/base/format.htm"><code>FORMAT A:</code></a> first.</p>
+      <p><strong>Formatting erases the target disk.</strong> Only format a new
+      disk or one whose contents you intend to erase. Check the drive letter
+      before running <code>FORMAT</code>.</p>
+    </div>
+<pre class="term"><span class="w">C:\&gt;</span><code>FORMAT A:</code>
+<span class="w">C:\&gt;</span><code>SYS A:</code>
+<span class="g">System transferred.</span>
+
+<span class="w">C:\&gt;</span><span class="cursor"></span></pre>
+    <div class="body">
+      <p>Run <code>SYS A:</code> from the directory containing
+      <code>KERNEL.SYS</code> and <code>COMMAND.COM</code>, or specify a
+      source directory as shown below. To test the result, reboot from the
+      floppy.</p>
+      <p>Use <a href="https://help.fdos.org/en/hhstndrd/base/format.htm"><code>FORMAT A: /S</code></a>
+      as a shortcut to format the disk and install the system in one step.
+      FreeDOS <code>FORMAT</code> uses <code>SYS</code> for <code>/S</code>,
+      so make sure <code>SYS</code> is available.</p>
+      <p>See the FreeDOS <a href="https://help.fdos.org/en/hhstndrd/base/sys.htm"><code>SYS</code></a> help
+      at help.fdos.org for complete usage and options.</p>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>Using files from somewhere else</h2><span class="box r"></span></div>
+    <div class="body">
+      <p>To install system files from another directory, give <code>SYS</code>
+      the source directory first and the target drive second:</p>
+<pre class="term"><span class="w">C:\&gt;</span><code>SYS C:\NEWKERN A:</code></pre>
+      <p>The directory needs the kernel file and a <code>COMMAND.COM</code>.
+      The FreeDOS <code>SYS</code> also has switches for writing only the
+      boot sector, saving the old boot sector to a file, and installing
+      boot sectors for kernels other than FreeDOS. See the
+      <code>SYS</code> options for details.</p>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>What are the kernel files?</h2><span class="box r"></span></div>
+    <div class="body">
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kernel</th><th>Kernel file(s)</th><th>Use this SYS</th></tr></thead>
+        <tbody>
+          <tr><td>FreeDOS</td><td><code>KERNEL.SYS</code></td><td>FreeDOS <code>SYS</code></td></tr>
+          <tr><td>EDR-DOS (SvarDOS)</td><td><code>KERNEL.SYS</code>, or <code>DRBIO.SYS</code> + <code>DRDOS.SYS</code></td><td>FreeDOS <code>SYS</code> works for the single-file <code>KERNEL.SYS</code>; see the project README for the two-file build</td></tr>
+          <tr><td>MS-DOS 4.0</td><td><code>IO.SYS</code> + <code>MSDOS.SYS</code></td><td>The MS-DOS 4.0 <code>SYS</code> from the same release</td></tr>
+          <tr><td>lDOS</td><td><code>LDOS.COM</code>, <code>LDOS.SYS</code>, <code>LDOSPAK.COM</code>, or <code>LDOSPAK.SYS</code></td><td>Use <a href="https://pushbx.org/ecm/doc/ldos.htm"><code>INSTSECT</code></a> with the loader for the chosen kernel file. The default is <code>LDOS.COM</code>.</td></tr>
+          <tr><td>EDR-DOS (ecm)</td><td><code>EDRDOS.COM</code> or <code>EDRDOS.SYS</code> (unpacked), <code>EDRPACK.COM</code> or <code>EDRPACK.SYS</code> (packed)</td><td>Match the loader to the kernel file. FreeDOS <code>SYS</code> builds with <code>/OEM:LEDR</code> and <code>/OEM:LEDRPACK</code> support <code>EDRDOS.COM</code> and <code>EDRPACK.SYS</code>, respectively.</td></tr>
+          <tr><td>RxDOS</td><td><code>RXDOS.COM</code> (packed) or <code>RXDOSU.COM</code> (unpacked)</td><td>Use an RxDOS-compatible loader configured for the selected filename. Earlier two-file builds use <code>RXBIO.SYS</code> (or <code>RXDOSBIO.SYS</code>) plus <code>RXDOS.SYS</code> and need the matching loader.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The EDR-DOS <code>KERNEL.SYS</code> follows the FreeDOS load
+      protocol, so you can drop it in place of a FreeDOS kernel.</p>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>Changing the shell</h2><span class="box r"></span></div>
+    <div class="body">
+      <p>Check the shell’s kernel and CPU requirements. Copy the shell to
+      the boot disk and tell the kernel about it with a <code>SHELL=</code>
+      line in its startup configuration file.</p>
+      <p>By default, these kernels look for their own startup configuration
+      filename first and fall back to <code>CONFIG.SYS</code> if it is
+      missing:</p>
+      <ul>
+        <li>FreeDOS — <code>FDCONFIG.SYS</code></li>
+        <li>Enhanced DR-DOS (SvarDOS and ecm) — <code>DCONFIG.SYS</code></li>
+        <li>lDOS — <code>LDOS.INI</code></li>
+        <li>RxDOS — <code>RXCONFIG.SYS</code></li>
+      </ul>
+<pre class="term"><span class="y">REM FreeCOM</span>
+SHELL=A:\COMMAND.COM A:\ /E:1024 /P
+
+<span class="y">REM 4DOS</span>
+SHELL=A:\4DOS.COM A:\ /P</pre>
+      <p><code>/P</code> makes it the permanent shell and runs
+      <code>AUTOEXEC.BAT</code>. <code>/E</code> sets the environment
+      size. Each shell has its own extras, so check its documentation.</p>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>No floppy drive?</h2><span class="box r"></span></div>
+    <div class="body">
+      <p>Most people try these out in an emulator first, and that is the
+      recommended way if you are new or don't have an old PC available. 
+      QEMU, 86Box, PCem, VirtualBox and DOSBox-X can
+      all boot a raw 1.44&nbsp;MB floppy image. Make a blank image, format
+      it and <code>SYS</code> it from inside a running DOS, then boot from
+      it:</p>
+<pre class="term"><span class="y">$</span> qemu-system-i386 -fda floppy.img -boot a</pre>
+      <p>On real hardware without a floppy, a USB stick set to floppy or
+      hard disk emulation in the BIOS behaves the same way. Write the
+      image to it with whatever raw disk writer you trust.</p>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>Before you touch drive C:</h2><span class="box r"></span></div>
+    <div class="body">
+      <ul>
+        <li>Back up first. <code>SYS C:</code> rewrites the boot sector of
+        that partition.</li>
+        <li>If another OS boots from that disk, save its boot sector before
+        you start. FreeDOS <code>SYS</code> can write the old sector to a
+        file for you.</li>
+        <li>Make sure the partition is marked active, or use a boot manager
+        that can chain to it.</li>
+        <li>Keep a boot floppy or image handy that you know works.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="statusbar">
+  <span>See each mirrored project for its license terms.</span>
+  <span><a href="https://help.fdos.org/">help.fdos.org</a></span>
+</footer>
+
+</body>
+</html>

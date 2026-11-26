@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOS-Core</title>
+<meta name="description" content="DOS-Core: Read-only mirrors of DOS kernel and command shell source code, with links back to the projects that maintain them.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="menubar">
+  <span class="app">DOS-Core</span>
+  <a href="index.html" aria-current="page">Home</a>
+  <a href="mirrors.html">Mirrors</a>
+  <a href="install.html">Install</a>
+  <a href="builds.html">Builds</a>
+  <a href="https://github.com/dos-core">GitHub</a>
+</nav>
+
+<main class="desktop">
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h1>DOS Prompt</h1><span class="box r"></span></div>
+<pre class="term"><span class="w">C:\&gt;</span>VER
+
+DOS-Core  -  DOS kernel and shell source archives
+
+<span class="w">C:\&gt;</span>DIR \CORE /W
+
+ Volume in drive C is DOS-CORE
+ Directory of C:\CORE
+
+<a href="mirrors.html#fdkernel">[FDKERNEL]</a>   <a href="mirrors.html#edrdos">[EDRDOS]</a>     <a href="mirrors.html#ecm-edrdos">[ECM-EDRDOS]</a> <a href="mirrors.html#msdos4">[MSDOS4]</a>     <a href="mirrors.html#ldos">[LDOS]</a>
+<a href="mirrors.html#rxdos">[RXDOS]</a>      <a href="mirrors.html#freecom">[FREECOM]</a>    <a href="mirrors.html#svarcom">[SVARCOM]</a>    <a href="mirrors.html#4dos">[4DOS]</a>       <a href="mirrors.html#ecm">[ECM]</a>
+       10 dir(s)
+
+<span class="w">C:\&gt;</span><span class="cursor"></span></pre>
+  </section>
+
+  <div class="notice" role="note">
+    <span class="mark" aria-hidden="true">!</span>
+    <div>
+      <p><strong>Report bugs and send patches upstream.</strong></p>
+      <p>DOS-Core mirrors upstream source. See <a href="mirrors.html">Mirrors</a> page 
+      for links to the projects that maintain the software.</p>
+    </div>
+  </div>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>About DOS-Core</h2><span class="box r"></span></div>
+    <div class="body">
+      <p>There are several MS-DOS clones created over the years.  Gathered here
+      is a collection of free and Open Source versions including the now MIT
+      released original MS-DOS.  Many of these are still maintained and
+      available on GitHub, Mercurial, SVN, or may only be available as ZIP
+      archives.  Historical source versions are available in many of the
+      repositories.  Where a git upstream is not available, the upstream 
+      revision control system is converted to git locally and pushed to GitHub.</p>
+      <p>The core files (kernel and shell) are all that are needed for a minimal
+      DOS system.  Pick and choose the kernel you want.  Some have advanced 
+      features and others better compatibility.  All have their advantages.
+      View the source from the <a href="mirrors.html">mirrors</a> page or get
+      ready to use files from <a href="builds.html">builds</a>.</p>
+      <p>Please refer to each program's license.  Credit and copyright belong
+      to those individuals listed in the documentation for each.</p>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>Kernels</h2><span class="box r"></span></div>
+    <div class="body">
+      <div class="icons">
+        <a class="icon" href="mirrors.html#fdkernel"><span class="glyph">SYS</span><span>FreeDOS Kernel</span></a>
+        <a class="icon" href="mirrors.html#edrdos"><span class="glyph">SYS</span><span>EDR-DOS (SvarDOS)</span></a>
+        <a class="icon" href="mirrors.html#ecm-edrdos"><span class="glyph">SYS</span><span>EDR-DOS (ecm)</span></a>
+        <a class="icon" href="mirrors.html#msdos4"><span class="glyph">SYS</span><span>MS-DOS 4.00</span></a>
+        <a class="icon" href="mirrors.html#ldos"><span class="glyph">SYS</span><span>lDOS</span></a>
+        <a class="icon" href="mirrors.html#rxdos"><span class="glyph">SYS</span><span>RxDOS</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>Shells</h2><span class="box r"></span></div>
+    <div class="body">
+      <div class="icons">
+        <a class="icon" href="mirrors.html#freecom"><span class="glyph shell">C:\&gt;</span><span>FreeCOM</span></a>
+        <a class="icon" href="mirrors.html#svarcom"><span class="glyph shell">C:\&gt;</span><span>SvarCOM</span></a>
+        <a class="icon" href="mirrors.html#4dos"><span class="glyph shell">C:\&gt;</span><span>4DOS</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>Build tools</h2><span class="box r"></span></div>
+    <div class="body">
+      <div class="icons">
+        <a class="icon" href="mirrors.html#ecm"><span class="glyph lib">LIB</span><span>ecm build tools</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h2>What is DOS good for?</h2><span class="box r"></span></div>
+    <div class="body">
+      <p>DOS still runs classic PC software, supports legacy equipment, and
+      gives developers a small operating system to study.</p>
+      <ul>
+        <li><strong>Old hardware.</strong> Supported kernels let older PCs run DOS software.
+        CPU requirements and FAT32 support depend on the kernel build.</li>
+        <li><strong>Games.</strong> Real-mode and DOS-extender games run on
+        bare metal the way they were written to, sound card timing and all.</li>
+        <li><strong>Firmware and BIOS flashing.</strong> Plenty of vendor
+        flash tools and diagnostics still expect to be run from a DOS boot
+        disk or USB stick.</li>
+        <li><strong>Industrial and embedded gear.</strong> CNC controllers,
+        test rigs, lab instruments and point-of-sale boxes that have run the
+        same DOS program for thirty years and are not about to stop.</li>
+        <li><strong>Legacy business software.</strong> Accounting or database
+        programs that source has long been lost or too expensive to upgrade.</li>
+        <li><strong>Learning how an OS works.</strong> DOS source code lets you follow
+        the boot process and see how the kernel handles files, memory, and
+        system calls.  Note though that more modern or OSes built for learning
+        are likely to be better.  But still great for hobby work or to learn
+        about historical operating systems and how they functioned.</li>
+        <li><strong>Emulator and compatibility work.</strong> Compare or run
+        several kernels side by side, with source and history.  Enjoy a taste
+        of using computers of yore but in comfort of a modern system.</li>
+      </ul>
+      <p>Ready to try one? See <a href="install.html">Install</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="statusbar">
+  <span>See each mirrored project for its license terms.</span>
+  <span><a href="https://github.com/dos-core">github.com/dos-core</a></span>
+</footer>
+
+</body>
+</html>
