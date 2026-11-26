@@ -326,3 +326,27 @@ th { background: var(--face); }
   .mirror dl { grid-template-columns: 1fr; }
   .mirror dt { margin-top: 4px; }
 }
+
+/* Home DOS Prompt: use the CRT-style 40-column layout when the wide
+   directory's 58-character line does not fit the terminal content box. */
+.term40or80 {
+  container: dos-prompt / inline-size;
+}
+
+@container dos-prompt (width < 58ch) {
+  .term40or80 .term-banner,
+  .term40or80 .term-directory {
+    inline-size: min(100%, 40ch);
+    vertical-align: top;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .term40or80 .term-banner { display: inline-block; }
+
+  .term40or80 .term-directory {
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr));
+    column-gap: 1ch;
+  }
+}
