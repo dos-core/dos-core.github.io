@@ -9,6 +9,7 @@ Source for the DOS-Core website, www.doscore.org.
 | mirrors.html | Upstream project pages and licenses |
 | install.html | Basic installation and warnings, SYS A: |
 | builds.html | Where to get official binaries; and DOS-Core builds |
+| emulators.html | DOS and PC emulators, desktop virtualization, and browser projects |
 | 404.html | Abort, Retry, Fail? |
 | style.css | styling and typography |
 

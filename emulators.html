@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOS-Core Emulators</title>
+<meta name="description" content="Desktop, open-source, and browser emulators for DOS programs and bootable PC disk images.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="menubar">
+  <span class="app">DOS-Core</span>
+  <a href="index.html">Home</a>
+  <a href="mirrors.html">Mirrors</a>
+  <a href="install.html">Install</a>
+  <a href="builds.html">Builds</a>
+  <a href="emulators.html" aria-current="page">Emulators</a>
+  <a href="https://github.com/dos-core">GitHub</a>
+</nav>
+
+<main class="desktop">
+  <section class="window">
+    <div class="titlebar"><span class="box"></span><h1>Emulators</h1><span class="box r"></span></div>
+    <div class="body">
+      <p>Boot a DOS disk image, reproduce an older PC, or run a DOS application.</p>
+      <ul>
+        <li><a href="#open-source">Open-source virtualization and PC emulation</a></li>
+        <li><a href="#browser">Browser emulators</a></li>
+        <li><a href="#dos-programs">DOS applications and games</a></li>
+        <li><a href="#desktop">Vendor virtualization</a></li>
+      </ul>
+      <p>See <a href="builds.html">Builds</a> for DOS downloads and
+      <a href="install.html">Install</a> for help preparing a boot disk.</p>
+    </div>
+  </section>
+
+  <section class="window" id="open-source">
+    <div class="titlebar"><span class="box"></span><h2>Open-source virtualization and PC emulation</h2><span class="box r"></span></div>
+    <div class="body">
+      <p>Use a full-system emulator to reproduce a classic PC or simulate particular PC hardware.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Project</th><th scope="col">What it runs</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href="https://www.qemu.org/">QEMU</a></th><td>Full-system emulation for booting disk images, with optional hardware acceleration on supported hosts.</td></tr>
+            <tr><th scope="row"><a href="https://docs.kernel.org/virt/kvm/index.html">KVM</a></th><td>Linux kernel virtualization support. QEMU can use KVM to accelerate compatible guests.</td></tr>
+            <tr><th scope="row"><a href="https://86box.net/">86Box</a></th><td>Emulates period PC motherboards, video cards, and sound hardware.</td></tr>
+            <tr><th scope="row"><a href="https://pcem-emulator.github.io/">PCem</a></th><td>Emulates a range of IBM PCs and compatibles with configurable period hardware.</td></tr>
+            <tr><th scope="row"><a href="https://bochs.sourceforge.io/">Bochs</a></th><td>Portable x86 PC emulator with a CPU debugger.</td></tr>
+            <tr><th scope="row"><a href="https://github.com/dbalsom/martypc">MartyPC</a></th><td>Rust emulator focused on cycle-accurate IBM PC, XT, PCjr, and Tandy emulation.</td></tr>
+            <tr><th scope="row"><a href="https://github.com/mikechambers84/XTulator">XTulator</a></th><td>A portable emulator for XT-era PCs with 8086 and 80186 instruction support.</td></tr>
+            <tr><th scope="row"><a href="https://github.com/adriancable/8086tiny">8086tiny</a></th><td>A compact 8086 PC emulator.</td></tr>
+            <tr><th scope="row"><a href="https://github.com/bit-hack/fake86">Fake86 Redux</a></th><td>A continuation of the Fake86 early x86 PC emulator.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="window" id="browser">
+    <div class="titlebar"><span class="box"></span><h2>Browser emulators</h2><span class="box r"></span></div>
+    <div class="body">
+      <p>Emulators that run in the browser using JavaScript/WebAssembly. Refer to the project’s own site or repository for more information.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Project</th><th scope="col">What it runs</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href="https://www.pcjs.org/">PCjs Machines</a></th><td>Jeff Parsons’s JavaScript simulations of the original IBM PC, XT, AT, and other machines, with runnable demos.</td></tr>
+            <tr><th scope="row"><a href="https://bellard.org/jslinux/">JSLinux</a></th><td>Fabrice Bellard’s browser virtual machines, with ready-to-run guest images.</td></tr>
+            <tr><th scope="row"><a href="https://copy.sh/v86/">v86</a></th><td>Browser x86 emulation with a WebAssembly CPU translator and an option to load your own disk images.</td></tr>
+            <tr><th scope="row"><a href="https://js-dos.com/">js-dos</a></th><td>Browser runtime for DOSBox-based packages, with a JavaScript API for embedding DOS programs.</td></tr>
+            <tr><th scope="row"><a href="https://github.com/jandej/e486-web">e486-web</a></th><td>A JavaScript 486 PC emulator with configurable motherboard and expansion devices.</td></tr>
+            <tr><th scope="row"><a href="https://github.com/jsdf/pce">PCE for the browser</a></th><td>A WebAssembly port of PCE that includes IBM PC emulation.</td></tr>
+            <tr><th scope="row"><a href="https://github.com/asmblah/jemul8">jemul8</a></th><td>A JavaScript x86 emulator for web browsers and Node.js.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="window" id="dos-programs">
+    <div class="titlebar"><span class="box"></span><h2>DOS applications and games</h2><span class="box r"></span></div>
+    <div class="body">
+      <p>These projects are designed for running DOS programs, so provide their own kernel API but many can also run other kernels.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Project</th><th scope="col">What it runs</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href="https://www.dosbox.com/">DOSBox</a></th><td>The original DOSBox project, focused on running DOS games.</td></tr>
+            <tr><th scope="row"><a href="https://dosbox-x.com/">DOSBox-X</a></th><td>A DOSBox fork that also supports booting DOS from disk images.</td></tr>
+            <tr><th scope="row"><a href="https://www.dosbox-staging.org/">DOSBox Staging</a></th><td>A modern continuation of DOSBox with updated audio, video, and usability features.</td></tr>
+            <tr><th scope="row"><a href="https://docs.libretro.com/library/dosbox_pure/">DOSBox Pure</a></th><td>A DOSBox-based core for RetroArch and other Libretro frontends.</td></tr>
+            <tr><th scope="row"><a href="https://github.com/dosemu2/dosemu2">DOSEMU2</a></th><td>Runs DOS programs on Linux.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="window" id="desktop">
+    <div class="titlebar"><span class="box"></span><h2>Vendor virtualization</h2><span class="box r"></span></div>
+    <div class="body">
+      <p>For DOS guests, check for legacy BIOS boot and compatible virtual hardware. Links for discontinued Microsoft products provide historical descriptions.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Project</th><th scope="col">What it runs</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href="https://www.virtualbox.org/">Oracle VirtualBox</a></th><td>Desktop virtual machines with BIOS boot and virtual disk images.</td></tr>
+            <tr><th scope="row"><a href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion">VMware Workstation and Fusion</a></th><td>VMware’s desktop virtual machine products. Workstation runs on Windows and Linux, and Fusion runs on macOS. For DOS, use an x86 guest on an x86 host.</td></tr>
+            <tr><th scope="row"><a href="https://en.wikipedia.org/wiki/Virtual_PC">Microsoft Virtual PC</a></th><td>Historical x86 PC emulation for older Windows NT based systems and PowerPC Macs.</td></tr>
+            <tr><th scope="row"><a href="https://en.wikipedia.org/wiki/Microsoft_Virtual_Server">Microsoft Virtual Server 2005 R2</a></th><td>Microsoft’s historical server virtualization product.</td></tr>
+            <tr><th scope="row"><a href="https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/overview">Microsoft Hyper-V</a></th><td>Microsoft’s Windows hypervisor. Generation 1 VMs provide legacy BIOS boot.</td></tr>
+            <tr><th scope="row"><a href="https://www.parallels.com/products/desktop/download/">Parallels Desktop for Mac</a></th><td>Commercial Mac virtualization. The <a href="https://kb.parallels.com/en/130217">x86 emulator on Apple silicon</a> requires UEFI, so it cannot directly boot a classic DOS disk.</td></tr>
+            <tr><th scope="row"><a href="https://docs.oracle.com/cd/E19315-01/805-6058-11/6j5nc881r/index.html">SunPCi</a></th><td>Sun Microsystems hardware and software for running PC guests on SPARC workstations under Solaris. The original SunPCi shipped with Caldera OpenDOS.</td></tr>
+            <tr><th scope="row"><a href="https://en.wikipedia.org/wiki/SoftPC">Insignia SoftPC and SoftWindows</a></th><td>Historical PC emulation for Unix workstations and Macs. SoftPC ran MS-DOS, and SoftWindows targeted Windows applications.</td></tr>
+            <tr><th scope="row"><a href="https://en.wikipedia.org/wiki/Merge_(software)">Locus DOS Merge</a></th><td>Ran DOS and later Windows 3.1 in a virtual machine on Unix systems such as SCO UNIX.</td></tr>
+            <tr><th scope="row"><a href="https://en.wikipedia.org/wiki/RealPC">RealPC</a></th><td>Pentium PC emulation for PowerPC Macs. It shipped with MS-DOS 6.22 and emulated Sound Blaster audio.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="statusbar">
+  <span><a href="https://github.com/dos-core">github.com/dos-core</a></span>
+</footer>
+
+</body>
+</html>
